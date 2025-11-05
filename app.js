@@ -285,4 +285,3 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
-const tmp = 1;
