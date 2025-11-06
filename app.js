@@ -32,16 +32,16 @@ function attachEventListeners() {
 
     searchInput.addEventListener('input', handleSearch);
 
-    filterButtons.forEach((btn) => {
+    for (const btn of filterButtons) {
         btn.addEventListener('click', () => {
-            filterButtons.forEach((b) => {
+            for (const b of filterButtons) {
                 b.classList.remove('active');
-            });
+            }
             btn.classList.add('active');
-            currentFilter = btn.getAttribute('data-filter');
+            currentFilter = btn.dataset.filter;
             renderTasks();
         });
-    });
+    }
 
     clearCompletedBtn.addEventListener('click', clearCompleted);
     exportBtn.addEventListener('click', exportTasks);
@@ -145,16 +145,18 @@ function renderTasks() {
         });
     }
 
-    taskList.innerHTML = '';
-
+    while (taskList.firstChild) {
+        taskList.firstChild.remove();
+    }
+    
     if (filteredTasks.length === 0) {
         taskList.innerHTML = '<div class="empty-state">Немає завдань для відображення</div>';
         return;
     }
 
-    filteredTasks.forEach((task) => {
+    for (const task of filteredTasks) {
         taskList.appendChild(createTaskElement(task));
-    });
+    }
 }
 
 // Отримання відфільтрованих завдань
@@ -218,14 +220,14 @@ function exportTasks() {
     if (tasks.length === 0) {
         textContent += 'Немає завдань для експорту.\n';
     } else {
-        tasks.forEach((task, index) => {
+        for (const [index, task] of tasks.entries()) {
             textContent += (index + 1) + '. ';
             textContent += (task.completed ? '[✓] ' : '[ ] ');
             textContent += task.text + '\n';
             textContent += '   Пріоритет: ' + getPriorityLabel(task.priority) + '\n';
             textContent += '   Створено: ' + formatDate(task.createdAt) + '\n';
             textContent += '\n';
-        });
+        }
     }
 
     textContent += '='.repeat(50) + '\n';
@@ -235,7 +237,7 @@ function exportTasks() {
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'tasks-' + new Date().getTime() + '.txt';
+    link.download = 'tasks-' + Date.now() + '.txt';
     link.click();
 }
 
@@ -254,7 +256,7 @@ function loadTasksFromStorage() {
     }
 
     if (storedCounter) {
-        taskIdCounter = parseInt(storedCounter);
+        taskIdCounter = Number.parseInt(storedCounter, 10);
     }
 }
 
