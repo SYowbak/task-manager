@@ -7,3 +7,4 @@ dist/
 coverage/
 .sonar/
 .scannerwork/
+sonar-project.properties
