@@ -1,11 +1,2 @@
-#!/bin/sh
-echo "Запуск ESLint..."
+echo "Запуск ESLint"
 npm run lint
-STATUS=$?
-
-if [ $STATUS -ne 0 ]; then
-  echo "ESLint виявив помилки. Коміт відмінено."
-  exit 1
-fi
-
-echo "ESLint пройшов. Продовжуємо коміт."
