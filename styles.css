@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.stats-panel {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.priority-select {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-filter {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-filter.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.task-list {
+    list-style: none;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+.task-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    border-left: 4px solid #667eea;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    border-left-color: #4caf50;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.task-priority {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.priority-high {
+    background: #ff5252;
+    color: white;
+}
+
+.priority-medium {
+    background: #ffa726;
+    color: white;
+}
+
+.priority-low {
+    background: #66bb6a;
+    color: white;
+}
+
+.task-date {
+    font-size: 0.85em;
+    color: #999;
+}
+
+.task-delete {
+    background: #ff5252;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.task-delete:hover {
+    background: #ff1744;
+}
+
+.footer {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .input-section {
+        flex-direction: column;
+    }
+    
+    .stats-panel {
+        flex-direction: column;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .filter-buttons {
+        width: 100%;
+    }
+    
+    .btn-filter {
+        flex: 1;
+    }
+    
+    .footer {
+        flex-direction: column;
+    }
+}

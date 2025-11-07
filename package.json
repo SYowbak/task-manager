@@ -1,0 +1,23 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "Interactive Task Manager - простий менеджер завдань",
+  "main": "app.js",
+  "scripts": {
+    "start": "echo 'Відкрийте index.html у браузері' && start index.html",
+    "lint": "eslint app.js",
+    "lint:fix": "eslint app.js --fix"
+  },
+  "keywords": [
+    "task-manager",
+    "todo",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.39.1"
+  }
+}

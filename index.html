@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Менеджер Завдань</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <p class="subtitle">Організуйте свої завдання ефективно</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat-card">
+                <span class="stat-value" id="totalTasks">0</span>
+                <span class="stat-label">Всього</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="activeTasks">0</span>
+                <span class="stat-label">Активні</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="completedTasks">0</span>
+                <span class="stat-label">Виконані</span>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Введіть нове завдання..." 
+                class="task-input"
+            >
+            <select id="prioritySelect" class="priority-select">
+                <option value="low">Низький пріоритет</option>
+                <option value="medium" selected>Середній пріоритет</option>
+                <option value="high">Високий пріоритет</option>
+            </select>
+            <button id="addTaskBtn" class="btn btn-primary">Додати завдання</button>
+        </div>
+
+        <div class="controls">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Пошук завдань..." 
+                class="search-input"
+            >
+            <div class="filter-buttons">
+                <button class="btn btn-filter active" data-filter="all">Всі</button>
+                <button class="btn btn-filter" data-filter="active">Активні</button>
+                <button class="btn btn-filter" data-filter="completed">Виконані</button>
+            </div>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <div class="footer">
+            <button id="clearCompleted" class="btn btn-secondary">Очистити виконані</button>
+            <button id="exportBtn" class="btn btn-secondary">Експортувати дані</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
