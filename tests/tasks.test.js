@@ -7,7 +7,7 @@ describe('TaskManager', () => {
         manager = new TaskManager();
     });
 
-    // 1. Тестування створення завдань (4 тести)
+    //Тестування створення завдань
     describe('addTask', () => {
         test('додає нове завдання', () => {
             const task = manager.addTask('Купити хліб', 'high');
@@ -33,7 +33,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 2. Тестування зміни статусу (2 як тести)
+    //Тестування зміни статусу
     describe('toggleTask', () => {
         test('перемикає completed на true', () => {
             const task = manager.addTask('Тест');
@@ -49,7 +49,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 3. Тестування видалення (3 тести)
+    //Тестування видалення
     describe('deleteTask', () => {
         test('видаляє завдання', () => {
             const task = manager.addTask('Видалити');
@@ -72,7 +72,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 4. Тестування фільтрації (3 тести)
+    //Тестування фільтрації
     describe('getFilteredTasks', () => {
         test('повертає всі завдання для фільтру all', () => {
             manager.addTask('завдання 1');
@@ -100,7 +100,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 5. Тестування масового видалення (2 тести)
+    //Тестування масового видалення
     describe('clearCompleted', () => {
         test('видаляє всі виконані завдання', () => {
             const t1 = manager.addTask('активна');
@@ -121,7 +121,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 6. Тестування експорту даних (2 тести)
+    //Тестування експорту даних
     describe('exportText', () => {
         test('експортує завдання в текстовому форматі', () => {
             const task = manager.addTask('Купити хліб', 'high');
@@ -139,7 +139,7 @@ describe('TaskManager', () => {
         });
     });
 
-    // 7. Тестування утиліт (2 тести)
+    //Тестування утиліт
     describe('getPriorityLabel', () => {
         test('перекладає пріоритети', () => {
             expect(TaskManager.getPriorityLabel('low')).toBe('Низький');
@@ -150,7 +150,7 @@ describe('TaskManager', () => {
 
     describe('formatDate', () => {
         test('форматує дату', () => {
-            const formatted = TaskManager.formatDate('2024-12-07T10:30:00.000Z');
+            const formatted = TaskManager.formatDate('2025-12-07T10:30:00.000Z');
             expect(formatted).toMatch(/\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}/);
         });
     });
