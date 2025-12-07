@@ -7,6 +7,7 @@ describe('TaskManager', () => {
         manager = new TaskManager();
     });
 
+    // 1. Тестування створення завдань (4 тести)
     describe('addTask', () => {
         test('додає нове завдання', () => {
             const task = manager.addTask('Купити хліб', 'high');
@@ -32,6 +33,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 2. Тестування зміни статусу (2 як тести)
     describe('toggleTask', () => {
         test('перемикає completed на true', () => {
             const task = manager.addTask('Тест');
@@ -47,6 +49,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 3. Тестування видалення (3 тести)
     describe('deleteTask', () => {
         test('видаляє завдання', () => {
             const task = manager.addTask('Видалити');
@@ -69,6 +72,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 4. Тестування фільтрації (3 тести)
     describe('getFilteredTasks', () => {
         test('повертає всі завдання для фільтру all', () => {
             manager.addTask('завдання 1');
@@ -96,6 +100,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 5. Тестування масового видалення (2 тести)
     describe('clearCompleted', () => {
         test('видаляє всі виконані завдання', () => {
             const t1 = manager.addTask('активна');
@@ -116,6 +121,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 6. Тестування експорту даних (2 тести)
     describe('exportText', () => {
         test('експортує завдання в текстовому форматі', () => {
             const task = manager.addTask('Купити хліб', 'high');
@@ -133,6 +139,7 @@ describe('TaskManager', () => {
         });
     });
 
+    // 7. Тестування утиліт (2 тести)
     describe('getPriorityLabel', () => {
         test('перекладає пріоритети', () => {
             expect(TaskManager.getPriorityLabel('low')).toBe('Низький');
